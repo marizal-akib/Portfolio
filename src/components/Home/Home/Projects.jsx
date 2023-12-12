@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaGitlab, FaReadme } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGitlab, FaReadme } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
 
@@ -50,6 +50,13 @@ const Projects = () => {
                 >
                   {" "}
                   <FaReadme />{" "}
+                </Link>
+                <Link
+                  to={`${project.link}`}
+                  className="text-xl mr-5 hover:text-[GreenYellow]"
+                >
+                  {" "}
+                  <FaExternalLinkAlt />{" "}
                 </Link>
               </div>
             </div>
