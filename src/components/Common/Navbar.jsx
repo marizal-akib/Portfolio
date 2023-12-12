@@ -9,7 +9,7 @@ const Navbar = () => {
         </Link>
       </li>
 
-      <li className="text-white font-extrabold hover:text-[greenYellow] ">
+      <li className="text-whit hidden font-extrabold hover:text-[greenYellow] ">
         <a>Works</a>
       </li>
     </>
@@ -47,7 +47,7 @@ const Navbar = () => {
         <div className=" hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">{navLink}</ul>
         </div>
-        <Link className="btn mr-12 font-light btn-sm p-2 px-2 rounded-md border-none bg-[GreenYellow]">
+        <Link className="btn hidden mr-12 font-light btn-sm p-2 px-2 rounded-md border-none bg-[GreenYellow]">
           Contact Me
         </Link>
       </div>
