@@ -1,13 +1,13 @@
 import { FaFileDownload, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const CV_URL="http://localhost:5173/cv.pdf"
+const CV_URL="http://localhost:5173/cv.zip"
 const Banner = () => {
 
     const downloadFile =(url)=>{
         fetch(url).then(response=>response.blob()).then(blob=>{
             const blobURL = window.URL.createObjectURL(new Blob ([blob]))
-            const fileName = url.split('/').pop();
+            const fileName = url.split("/").pop();
             const aTag = document.createElement('a');
             aTag.href=blobURL;
             aTag.setAttribute('download',fileName);
