@@ -1,23 +1,23 @@
 import { FaFileDownload, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const CV_URL="http://localhost:5173/cv.zip"
+
+const CV_URL = "https://portfolio-9cd80.web.app/Sayed_Mariz_Al-Akib.zip";
 const Banner = () => {
-
-    const downloadFile =(url)=>{
-        fetch(url).then(response=>response.blob()).then(blob=>{
-            const blobURL = window.URL.createObjectURL(new Blob ([blob]))
-            const fileName = url.split("/").pop();
-            const aTag = document.createElement('a');
-            aTag.href=blobURL;
-            aTag.setAttribute('download',fileName);
-            document.body.appendChild(aTag);
-            aTag.click();
-            aTag.remove();
-        })
-
-
-    }
+  const downloadFile = (url) => {
+    fetch(url)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const blobURL = window.URL.createObjectURL(new Blob([blob]));
+        const fileName = url.split("/").pop();
+        const aTag = document.createElement("a");
+        aTag.href = blobURL;
+        aTag.setAttribute("download", fileName);
+        document.body.appendChild(aTag);
+        aTag.click();
+        aTag.remove();
+      });
+  };
   return (
     <div className="hero min-h-screen bg-[#1b1f22] ">
       <div className="hero-content flex-col lg:flex-row-reverse max-w-5xl gap-48">
@@ -50,9 +50,9 @@ const Banner = () => {
             A Full Stack Developer
           </h3>
           <p className=" text-white max-w-xl text-lg">
-            🚀 My journey in the tech world is a blend of creativity, innovation,
-            and a relentless pursuit of mastering both the front-end and
-            back-end realms.<br></br> 💡 With an insatiable curiosity for
+            🚀 My journey in the tech world is a blend of creativity,
+            innovation, and a relentless pursuit of mastering both the front-end
+            and back-end realms.<br></br> 💡 With an insatiable curiosity for
             learning, I'm constantly exploring the latest trends and
             technologies, diving into projects that challenge and expand my
             skill set. <br /> 🖥️ Join me as I showcase my diverse portfolio,
@@ -60,25 +60,37 @@ const Banner = () => {
             ever-evolving landscape of web development.
           </p>
           <div className="flex lg:flex-row flex-col gap-5 lg:gap-56">
-          <div className="flex flex-row gap-5 ">
-            <Link
-              to={"https://github.com/marizal-akib"}
-              className=" text-4xl text-indigo-400"
-            >
-              <FaGithub />
-            </Link>
-            <Link
-              to={"https://www.linkedin.com/in/sayed-mariz-al-akib-426917234/"}
-              className=" text-4xl text-indigo-500"
-            >
-              <FaLinkedin />
-            </Link>
-          </div>
+            <div className="flex flex-row gap-5 ">
+              <Link
+                to={"https://github.com/marizal-akib"}
+                className=" text-4xl text-indigo-400"
+              >
+                <FaGithub />
+              </Link>
+              <Link
+                to={
+                  "https://www.linkedin.com/in/sayed-mariz-al-akib-426917234/"
+                }
+                className=" text-4xl text-indigo-500"
+              >
+                <FaLinkedin />
+              </Link>
+            </div>
 
-          <div>
-            <button onClick={() => {downloadFile(CV_URL)}} className="btn bg-amber-600 text-white flex flex-row gap-2"> <span className="text-xl"><FaFileDownload /></span> Download My Resume</button>
-          </div>
-
+            <div>
+              <button
+                onClick={() => {
+                  downloadFile(CV_URL);
+                }}
+                className="btn bg-amber-600 text-white flex flex-row gap-2"
+              >
+                {" "}
+                <span className="text-xl">
+                  <FaFileDownload />
+                </span>{" "}
+                Download My Resume
+              </button>
+            </div>
           </div>
         </div>
       </div>

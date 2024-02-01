@@ -9,8 +9,8 @@ const Navbar = () => {
         </Link>
       </li>
 
-      <li className="text-whit hidden font-extrabold hover:text-[greenYellow] ">
-        <a>Works</a>
+      <li className="text-white  font-extrabold hover:text-[greenYellow] " >
+        <Link  to={'/blogs'}>Blogs</Link>
       </li>
     </>
   );
